@@ -105,12 +105,7 @@ async fn save_mp3_file(
         .await
         .unwrap();
 
-    let mut uri: String = "s3://".to_owned();
-    uri.push_str(bucket);
-    uri.push('/');
-    uri.push_str(filename);
-
-    uri
+    format!("s3://{bucket}/{filename}")
 }
 // snippet-end:[telephone.rust.main-save_mp3_file]
 
